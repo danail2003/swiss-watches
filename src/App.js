@@ -1,10 +1,10 @@
 import './App.css';
-import Header from './components/header/index';
+import PageLayout from './components/page-layout/index';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <PageLayout />
     </div>
   );
 }
