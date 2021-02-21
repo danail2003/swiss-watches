@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.heading {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    background-image: linear-gradient(to right,#d3ea62,#c19e1f);
+}
+
+.heading-logo {
+    display: flex;
+}
+
+.heading-logo {
+    margin-top: -10px;
+}
+
+.heading-logo > h3 {
+    font-family: 'Great Vibes', cursive;
+    margin-right: 150px;
+}
+
+.nav > ul {
+    display: flex;
+}
+
+.nav > ul > li {
+    list-style: none;
+    margin-right: 30px;
+}
+
+.logo {
+    height: 25px;
+    margin: 0 10px;
+}
