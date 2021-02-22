@@ -4,7 +4,10 @@
     display: flex;
     justify-content: space-evenly;
     font-size: 20px;
-    background-image: linear-gradient(to right,#d3ea62,#c19e1f);
+    background: #0870CF;
+    background: -webkit-linear-gradient(left, #0870CF, #9A3C21);
+    background: -moz-linear-gradient(left, #0870CF, #9A3C21);
+    background: linear-gradient(to right, #0870CF, #9A3C21);
 }
 
 .heading-logo {

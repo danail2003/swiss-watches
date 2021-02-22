@@ -5,5 +5,11 @@ footer {
 
 ul {
     display: flex;
+    margin-right: 150px;
 }
 
+p {
+    font-family: 'Charmonman', cursive;
+    font-weight: bold;
+    color: #CAC440;
+}

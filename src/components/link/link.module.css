@@ -1,12 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Charmonman&display=swap');
 
+footer {
+    background: #000000;
+    background: -webkit-linear-gradient(left, #000000, #26262C);
+    background: -moz-linear-gradient(left, #000000, #26262C);
+    background: linear-gradient(to right, #000000, #26262C);
+}
+
 li {
     list-style: none;
     margin-right: 30px;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c0c0c0;
+}
+
 .link {
     font-family: 'Charmonman', cursive;
     font-weight: bold;
-    color: #603518;
+    color: #CAC440;
 }

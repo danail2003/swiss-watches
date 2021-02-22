@@ -15,7 +15,7 @@ const Footer = () => {
                     })
                 }
             </ul>
-            <p>All Rights reserved</p>
+            <p>All Rights reserved &copy; 2021</p>
         </footer>
     );
 };
