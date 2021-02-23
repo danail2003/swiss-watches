@@ -4,7 +4,7 @@ import styles from './watch.module.css';
 const Watch = ({ name, image, price }) => {
     return (
         <article>
-            <img alt='watch' />
+            <img src={image} alt='watch' />
             <div>
                 <p>{name}</p>
                 <p>{price}</p>
