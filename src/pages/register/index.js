@@ -4,14 +4,14 @@ import Title from '../../components/title/index';
 import PageLayout from '../../components/page-layout/index';
 
 const Register = () => {
-    const[username, setUsername] = useState('');
+    const[email, setEmail] = useState('');
     const[password, setPassword] = useState('');
     const[rePassword, setRePassword] = useState('');
 
     const Submit = async(e) => {
         e.preventDefault();
 
-        if(!username || !password || !rePassword || password !== rePassword || username.length < 3 || password.length < 6) {
+        if(!email || !password || !rePassword || password !== rePassword || email.length < 3 || password.length < 6) {
             return;
         }
 
@@ -23,8 +23,8 @@ const Register = () => {
             <Title />
             <form onSubmit={Submit}>
                 <div>
-                    <label htmlFor='username'>Username</label>
-                    <input id='username' type='text' onChange={(e) => setUsername(e.target.value)} value={username} />
+                    <label htmlFor='email'>Email</label>
+                    <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} value={email} />
                 </div>
                 <div>
                     <label htmlFor='password'>Password</label>

@@ -6,9 +6,9 @@ import Navigation from './Navigation';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Navigation>
-      <App />
-    </Navigation>
+    <App>
+      <Navigation />
+    </App>
   </React.StrictMode>,
   document.getElementById('root')
 );
