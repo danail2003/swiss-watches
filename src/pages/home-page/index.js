@@ -7,7 +7,7 @@ const Home = () => {
     return(
         <PageLayout>
             <Title title='All watches' />
-            <RenderWatches />
+           
         </PageLayout>
     );
 };

@@ -1,21 +1,25 @@
-import React, {useState} from 'react';
+import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from './login.module.css';
 import Title from '../../components/title/index';
 import PageLayout from '../../components/page-layout/index';
+import Context from '../../Context';
 
 const Login = () => {
-    const[email, setEmail] = useState('');
-    const[password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const history = useHistory();
+    const context = useContext(Context);
     const apiKey = 'AIzaSyDYNWoeX46SOv9246LONV9BWFY8JGEoI_0';
 
     const Submit = async (e) => {
         e.preventDefault();
 
-        if(!email || !password || !email.includes('@')) {
+        if (!email || !password || !email.includes('@')) {
             return;
         }
 
-        const request = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {
+        await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -25,11 +29,15 @@ const Login = () => {
                 password,
             }),
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
+            .then(res => res.json())
+            .then(data => {
+                context.logIn(data);
+                history.push('/');
+            })
+            .catch(e => alert(e.message));
     };
 
-    return(
+    return (
         <PageLayout>
             <Title />
             <form onSubmit={Submit}>
