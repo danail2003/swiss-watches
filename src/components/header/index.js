@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from '../link/index';
 import getNavigation from '../../services/getNavigation';
 import styles from './header.module.css';
 import logo from '../../images/rolex_logo.png';
+import Context from '../../Context';
 
 const Header = () => {
-    const navigation = getNavigation();
+    const { user } = useContext(Context);
+    const navigation = getNavigation(user);
 
     return (
         <header className={styles.heading}>

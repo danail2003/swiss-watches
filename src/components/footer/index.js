@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import getNavigation from '../../services/getNavigation';
 import Link from '../link/index';
 import styles from './footer.module.css';
+import Context from '../../Context';
 
 const Footer = () => {
-    const navigation = getNavigation();
+    const { user } = useContext(Context);
+    const navigation = getNavigation(user);
 
-    return(
+    return (
         <footer className={styles}>
             <ul>
                 {
