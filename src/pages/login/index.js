@@ -19,22 +19,29 @@ const Login = () => {
             return;
         }
 
-        await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                email,
-                password,
-            }),
-        })
-            .then(res => res.json())
-            .then(data => {
-                context.logIn(data);
-                history.push('/');
-            })
-            .catch(e => alert(e.message));
+        try {
+            const request = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                }),
+            });
+            
+            if(request.status === 400) {
+                throw new Error('Invalid email or password');
+            }
+    
+            const response = await request.json();
+            context.logIn(response);
+            history.push('/');
+        }
+        catch(e) {
+            alert(e.message);
+        }
     };
 
     return (

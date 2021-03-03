@@ -28,6 +28,10 @@ const getNavigation = (user) => {
             link: '/'
         },
         {
+            title: 'Account',
+            link: '/account'
+        },
+        {
             title: 'About us',
             link: '/about'
         },

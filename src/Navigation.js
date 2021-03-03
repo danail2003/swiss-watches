@@ -5,6 +5,7 @@ import Register from '../src/pages/register/index';
 import Login from '../src/pages/login/index';
 import About from './pages/about/index';
 import Contact from './pages/contact/index';
+import Account from './pages/account/index';
 
 const Navigation = () => {
     return (
@@ -15,6 +16,7 @@ const Navigation = () => {
                 <Route path='/login' component={Login} />
                 <Route path='/about' component={About} />
                 <Route path='/contact' component={Contact} />
+                <Route path='/account' component={Account} />
             </Switch>
         </BrowserRouter>
     );

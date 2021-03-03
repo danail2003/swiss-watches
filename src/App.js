@@ -11,10 +11,10 @@ const App = (props) => {
   const cookie = document.cookie && null;
 
   const logIn = (user) => {
-    const token = user ? user.idToken : cookie;
+    const email = user ? user.email : cookie;
 
-    if (token) {
-      document.cookie = `user=${token}`;
+    if (email) {
+      document.cookie = `user=${email}`;
     }
 
     setUser({
