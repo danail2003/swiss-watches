@@ -1,27 +1,25 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './register.module.css';
 import Title from '../../components/title/index';
 import PageLayout from '../../components/page-layout/index';
-import Context from '../../Context';
 
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rePassword, setRePassword] = useState('');
-    const context = useContext(Context);
     const history = useHistory();
     const apiKey = 'AIzaSyDYNWoeX46SOv9246LONV9BWFY8JGEoI_0';
 
     const Submit = async (e) => {
         e.preventDefault();
 
-        if (!email || !password || !rePassword || password !== rePassword || email.length < 3 
+        if (!email || !password || !rePassword || password !== rePassword || email.length < 3
             || password.length < 6 || !email.includes('@')) {
             return;
         }
 
-        const request = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`, {
+        await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -31,10 +29,8 @@ const Register = () => {
                 password
             })
         })
-            .then(res => res.json())
-            .then(data => {
-                context.logIn(data.user);
-                history.push('/');
+            .then(() => {
+                history.push('/login');
             })
             .catch(e => alert(e.message));
     };
