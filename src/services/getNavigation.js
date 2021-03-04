@@ -38,6 +38,10 @@ const getNavigation = (user) => {
         {
             title: 'Contact us',
             link: '/contact'
+        },
+        {
+            title: 'Add',
+            link: '/create'
         }
     ];
 

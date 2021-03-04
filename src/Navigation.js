@@ -6,17 +6,35 @@ import Login from '../src/pages/login/index';
 import About from './pages/about/index';
 import Contact from './pages/contact/index';
 import Account from './pages/account/index';
+import CreateWatch from './pages/create-watch/index';
+import Error from './pages/error/index';
+import Context from './Context';
 
 const Navigation = () => {
+    const context = useContext(Context);
+    const loggedIn = context.user && context.user.loggedIn;
+    console.log(context);
+    console.log(loggedIn);
+
     return (
         <BrowserRouter>
             <Switch>
                 <Route path='/' exact component={Home} />
-                <Route path='/register' component={Register} />
-                <Route path='/login' component={Login} />
+                <Route path='/register'>
+                    {loggedIn ? (<Redirect to='/' />) : (<Register />)}
+                </Route>
+                <Route path='/login'>
+                    {loggedIn ? (<Redirect to='/' />) : (<Login />)}
+                </Route>
                 <Route path='/about' component={About} />
                 <Route path='/contact' component={Contact} />
-                <Route path='/account' component={Account} />
+                <Route path='/account'>
+                    {loggedIn ? (<Account />) : (<Redirect to='/' />)}
+                </Route>
+                <Route path='/create'>
+                    {loggedIn ? (<CreateWatch />) : (<Redirect to='/' />)}
+                </Route>
+                <Route component={Error} />
             </Switch>
         </BrowserRouter>
     );
