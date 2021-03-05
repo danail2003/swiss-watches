@@ -19,6 +19,10 @@ const getNavigation = (user) => {
         {
             title: 'Contact us',
             link: '/contact'
+        },
+        {
+            title: 'Watches',
+            link: '/watches'
         }
     ];
 
@@ -42,6 +46,10 @@ const getNavigation = (user) => {
         {
             title: 'Add',
             link: '/create'
+        },
+        {
+            title: 'Watches',
+            link: '/watches'
         }
     ];
 

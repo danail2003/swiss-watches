@@ -39,19 +39,16 @@ const Register = () => {
         <PageLayout>
             <Title />
             <form onSubmit={Submit}>
-                <div>
+                <fieldset>
+                    <legend>Register</legend>
                     <label htmlFor='email'>Email</label>
                     <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} value={email} />
-                </div>
-                <div>
                     <label htmlFor='password'>Password</label>
                     <input id='password' type='password' onChange={(e) => setPassword(e.target.value)} value={password} />
-                </div>
-                <div>
                     <label htmlFor='re-password'>Repeat Password</label>
                     <input id='re-password' type='password' onChange={(e) => setRePassword(e.target.value)} value={rePassword} />
-                </div>
                 <button type='submit'>Register</button>
+                </fieldset>
             </form>
         </PageLayout>
     );

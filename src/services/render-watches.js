@@ -1,16 +1,26 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Watch from '../components/watch/index';
 
-const RenderWatches = (props) => {
+const RenderWatches = () => {
     const [watches, setWatches] = useState([]);
+    const url ='https://swiss-watches-e8910-default-rtdb.firebaseio.com';
 
-    const getWatches = useCallback(async () => {
-        const promise = await fetch(`http://localhost:9999/api/watches?length=${props.length}`);
+    const getWatches = async () => {
+        const promise = await fetch(`${url}/watches.json`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
         const watches = await promise.json();
 
-        console.log(watches);
         setWatches(watches);
-    }, [props.length]);
+    };
+
+    useEffect(() => {
+        getWatches();
+    });
 
     const renderWatches = () => {
         return watches.map((watch) => {
@@ -19,10 +29,6 @@ const RenderWatches = (props) => {
            ) 
         })
     };
-
-    useEffect(() => {
-        getWatches();
-    }, [getWatches]);
 
     return (
         <div>{renderWatches()}</div>

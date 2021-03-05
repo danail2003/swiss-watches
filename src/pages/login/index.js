@@ -48,15 +48,14 @@ const Login = () => {
         <PageLayout>
             <Title />
             <form onSubmit={Submit}>
-                <div>
+                <fieldset>
+                    <legend>Login</legend>
                     <label htmlFor='email'>Email</label>
                     <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} value={email} />
-                </div>
-                <div>
                     <label htmlFor='password'>Password</label>
                     <input id='password' type='password' onChange={(e) => setPassword(e.target.value)} value={password} />
-                </div>
                 <button type='submit'>Login</button>
+                </fieldset>
             </form>
         </PageLayout>
     );

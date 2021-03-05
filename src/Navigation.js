@@ -9,17 +9,17 @@ import Account from './pages/account/index';
 import CreateWatch from './pages/create-watch/index';
 import Error from './pages/error/index';
 import Context from './Context';
+import Watches from './pages/watches/index';
 
 const Navigation = () => {
     const context = useContext(Context);
     const loggedIn = context.user && context.user.loggedIn;
-    console.log(context);
-    console.log(loggedIn);
 
     return (
         <BrowserRouter>
             <Switch>
                 <Route path='/' exact component={Home} />
+                <Route path='/watches' component={Watches} />
                 <Route path='/register'>
                     {loggedIn ? (<Redirect to='/' />) : (<Register />)}
                 </Route>
