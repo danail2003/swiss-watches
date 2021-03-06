@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Context from './Context';
 
 const App = (props) => {
@@ -10,7 +10,7 @@ const App = (props) => {
 
   const cookie = document.cookie && null;
 
-  const logIn = (user) => {
+  const logIn = useCallback((user) => {
     const email = user ? user.email : cookie;
 
     if (email) {
@@ -21,7 +21,7 @@ const App = (props) => {
       ...user,
       loggedIn: true
     });
-  };
+  }, [cookie]);
 
   const watches = props.watches || [];
 
@@ -39,7 +39,7 @@ const App = (props) => {
         user: idToken
       })
     }
-  }, [])
+  }, [logIn])
 
   const logOut = () => {
     setUser({

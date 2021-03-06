@@ -25,7 +25,6 @@ const RenderWatches = () => {
     }, [getWatches]);
 
     const render = () => {
-        console.log(watches)
         return watches.map((watch, index) => {
            return(
                <Watch key={index} {...watch} />
