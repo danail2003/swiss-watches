@@ -10,6 +10,7 @@ const Watch = ({ name, description, image, price }) => {
                 <p>{price}</p>
                 <p>{description}</p>
             </div>
+            <button>Buy</button>
         </article>
     );
 };

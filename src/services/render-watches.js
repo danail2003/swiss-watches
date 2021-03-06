@@ -28,8 +28,10 @@ const RenderWatches = () => {
     const render = () => {
         return (
             <div>
-                {watches.filter(watch => watch.creator === creator).map((watch, index) => (
+                {creator ? watches.filter(watch => watch.creator === creator).map((watch, index) => (
                        <Watch key={index} {...watch} />
+                )) : watches.map((watch, index) => (
+                    <Watch key={index} {...watch} />
                 ))}
             </div>
         )
