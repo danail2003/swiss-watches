@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import Watch from '../components/watch/index';
+import MyWatch from '../components/my-watch/index';
 
 const RenderMyWatches = () => {
     const [watches, setWatches] = useState([]);
@@ -29,7 +29,7 @@ const RenderMyWatches = () => {
         return (
             <div>
                 {watches.filter(watch => watch.creator === creator).map((watch, index) => (
-                       <Watch key={index} {...watch} />
+                       <MyWatch key={index} {...watch} />
                 ))}
             </div>
         )

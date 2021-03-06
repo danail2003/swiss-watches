@@ -5,8 +5,8 @@ const getNavigation = (user) => {
             link: '/'
         },
         {
-            title: 'About us',
-            link: '/about'
+            title: 'Watches',
+            link: '/watches'
         },
         {
             title: 'Register',
@@ -17,12 +17,12 @@ const getNavigation = (user) => {
             link: '/login'
         },
         {
-            title: 'Contact us',
-            link: '/contact'
+            title: 'About us',
+            link: '/about'
         },
         {
-            title: 'Watches',
-            link: '/watches'
+            title: 'Contact us',
+            link: '/contact'
         }
     ];
 
@@ -36,20 +36,20 @@ const getNavigation = (user) => {
             link: '/account'
         },
         {
-            title: 'About us',
-            link: '/about'
-        },
-        {
-            title: 'Contact us',
-            link: '/contact'
-        },
-        {
             title: 'Add',
             link: '/create'
         },
         {
             title: 'Watches',
             link: '/watches'
+        },
+        {
+            title: 'About us',
+            link: '/about'
+        },
+        {
+            title: 'Contact us',
+            link: '/contact'
         }
     ];
 
