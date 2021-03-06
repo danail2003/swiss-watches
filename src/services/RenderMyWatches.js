@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import Watch from '../components/watch/index';
 
-const RenderWatches = () => {
+const RenderMyWatches = () => {
     const [watches, setWatches] = useState([]);
     const url ='https://swiss-watches-e8910-default-rtdb.firebaseio.com';
     const creator = document.cookie.slice(5);
@@ -28,10 +28,8 @@ const RenderWatches = () => {
     const render = () => {
         return (
             <div>
-                {creator ? watches.filter(watch => watch.creator !== creator).map((watch, index) => (
+                {watches.filter(watch => watch.creator === creator).map((watch, index) => (
                        <Watch key={index} {...watch} />
-                )) : watches.map((watch, index) => (
-                    <Watch key={index} {...watch} />
                 ))}
             </div>
         )
@@ -42,4 +40,4 @@ const RenderWatches = () => {
     );
 };
 
-export default RenderWatches;
+export default RenderMyWatches;
