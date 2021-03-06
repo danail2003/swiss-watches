@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Context from './Context';
 
 const App = (props) => {
+  console.log()
   const [user, setUser] = useState(props.user ? {
     ...props.user,
     loggedIn: true
@@ -18,12 +19,10 @@ const App = (props) => {
     }
 
     setUser({
-      ...user,
+      user: email,
       loggedIn: true
     });
   }, [cookie]);
-
-  const watches = props.watches || [];
 
   useEffect(() => {
     const cookie = document.cookie;
@@ -50,7 +49,7 @@ const App = (props) => {
   return (
     <Context.Provider value={{
       user,
-      watches,
+      watches: [],
       logIn,
       logOut
     }}>

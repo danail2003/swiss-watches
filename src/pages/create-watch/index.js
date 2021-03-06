@@ -12,7 +12,7 @@ const CreateWatch = () => {
     const context = useContext(Context);
     const history = useHistory();
     const url = `https://swiss-watches-e8910-default-rtdb.firebaseio.com`;
-    const creator = context.user.email;
+    const creator = document.cookie.slice(5);
     const buyers = [];
 
     const Submit = async (e) => {

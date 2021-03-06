@@ -36,7 +36,9 @@ const Login = () => {
             }
     
             const response = await request.json();
-            context.logIn(response);
+            context.logIn({
+                ...response
+            });
             history.push('/');
         }
         catch(e) {
