@@ -1,13 +1,19 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styles from './watch.module.css';
 
 const Watch = (props) => {
     const history = useHistory();
     const url = `https://swiss-watches-e8910-default-rtdb.firebaseio.com`;
+    const loggedIn = document.cookie;
 
     const deleteWatch = async (e) => {
         e.preventDefault();
+
+        if(!loggedIn) {
+            history.push('/login');
+            return;
+        }
 
         const id = e.target.getAttribute('id');
 
@@ -17,12 +23,12 @@ const Watch = (props) => {
                 'Content-Type': 'application/json'
             }
         })
-        .then(() => {
-            history.push('/');
-        })
-        .catch((e) => {
-            alert(e.message);
-        })
+            .then(() => {
+                history.push('/');
+            })
+            .catch((e) => {
+                alert(e.message);
+            })
     };
 
     return (

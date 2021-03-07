@@ -16,7 +16,7 @@ const RenderMyWatches = () => {
 
         const watches = await promise.json();
 
-        const array = Object.values(watches);
+        const array = Object.entries(watches);
 
         setWatches(array);
     }, []);
@@ -28,7 +28,7 @@ const RenderMyWatches = () => {
     const render = () => {
         return (
             <div>
-                {watches.filter(watch => watch.creator === creator).map((watch, index) => (
+                {watches.filter(watch => watch[1].creator === creator).map((watch, index) => (
                        <MyWatch key={index} {...watch} />
                 ))}
             </div>
