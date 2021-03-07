@@ -16,7 +16,7 @@ const RenderWatches = () => {
 
         const watches = await promise.json();
 
-        const array = Object.values(watches);
+        const array = Object.values(watches).sort((a, b) => Number(a.price) - Number(b.price));
 
         setWatches(array);
     }, []);
