@@ -30,18 +30,18 @@ const Login = () => {
                     password,
                 }),
             });
-            
-            if(request.status === 400) {
+
+            if (request.status === 400) {
                 throw new Error('Invalid email or password');
             }
-    
+
             const response = await request.json();
             context.logIn({
                 ...response
             });
             history.push('/');
         }
-        catch(e) {
+        catch (e) {
             alert(e.message);
         }
     };
@@ -56,7 +56,7 @@ const Login = () => {
                     <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} value={email} />
                     <label htmlFor='password'>Password</label>
                     <input id='password' type='password' onChange={(e) => setPassword(e.target.value)} value={password} />
-                <button type='submit'>Login</button>
+                    <button type='submit'>Login</button>
                 </fieldset>
             </form>
         </PageLayout>

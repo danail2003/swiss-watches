@@ -10,6 +10,7 @@ import CreateWatch from './pages/create-watch/index';
 import Error from './pages/error/index';
 import Context from './Context';
 import Watches from './pages/watches/index';
+import Edit from './pages/edit/index';
 
 const Navigation = () => {
     const context = useContext(Context);
@@ -33,6 +34,9 @@ const Navigation = () => {
                 </Route>
                 <Route path='/create'>
                     {loggedIn ? (<CreateWatch />) : (<Redirect to='/' />)}
+                </Route>
+                <Route path='/edit'>
+                    {loggedIn ? (<Edit />) : (<Redirect to='/' />)}
                 </Route>
                 <Route component={Error} />
             </Switch>
