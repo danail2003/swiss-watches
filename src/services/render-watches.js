@@ -16,7 +16,7 @@ const RenderWatches = () => {
 
         const watches = await promise.json();
 
-        const array = Object.values(watches).sort((a, b) => Number(a.price) - Number(b.price));
+        const array = Object.entries(watches).sort((a, b) => Number(a[1].price) - Number(b[1].price));
 
         setWatches(array);
     }, []);
@@ -28,7 +28,7 @@ const RenderWatches = () => {
     const render = () => {
         return (
             <div>
-                {creator ? watches.filter(watch => watch.creator !== creator).map((watch, index) => (
+                {creator ? watches.filter(watch => watch[1].creator !== creator).map((watch, index) => (
                        <Watch key={index} {...watch} />
                 )) : watches.map((watch, index) => (
                     <Watch key={index} {...watch} />
