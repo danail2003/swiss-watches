@@ -1,19 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import PageLayout from '../../components/page-layout/index';
 import Title from '../../components/title/index';
-import Context from '../../Context';
 
 const CreateWatch = () => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
     const [image, setImage] = useState('');
-    const context = useContext(Context);
     const history = useHistory();
     const url = `https://swiss-watches-e8910-default-rtdb.firebaseio.com`;
     const creator = document.cookie.slice(5);
-    const buyers = [];
 
     const Submit = async (e) => {
         e.preventDefault();
@@ -28,8 +25,7 @@ const CreateWatch = () => {
                 description,
                 price,
                 image,
-                creator,
-                buyers
+                creator
             })
         })
             .then(() => {

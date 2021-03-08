@@ -25,6 +25,12 @@ const MyWatch = (props) => {
             })
     };
 
+    const naviagateToEdit = (e) => {
+        e.preventDefault();
+
+        history.push(`/edit/:${props[0]}`);
+    };
+
     return (
         <article>
             <img src={props[1].image} alt='watch' />
@@ -34,7 +40,7 @@ const MyWatch = (props) => {
                 <p>{props[1].price}</p>
             </div>
             <button type='submit' id={props[0]} onClick={deleteWatch}>Delete</button>
-            <button>Edit</button>
+            <button onClick={naviagateToEdit}>Edit</button>
         </article>
     );
 };
