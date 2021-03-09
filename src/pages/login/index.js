@@ -15,7 +15,9 @@ const Login = () => {
     const Submit = async (e) => {
         e.preventDefault();
 
-        if (!email || !password || !email.includes('@')) {
+        if (!email || !password) {
+            alert('Invalid email or password!');
+
             return;
         }
 
@@ -31,14 +33,11 @@ const Login = () => {
                 }),
             });
 
-            if (request.status === 400) {
-                throw new Error('Invalid email or password');
-            }
-
             const response = await request.json();
             context.logIn({
                 ...response
             });
+            
             history.push('/');
         }
         catch (e) {

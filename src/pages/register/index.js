@@ -14,8 +14,10 @@ const Register = () => {
     const Submit = async (e) => {
         e.preventDefault();
 
-        if (!email || !password || !rePassword || password !== rePassword || email.length < 3
+        if (!email || !password || !rePassword || password !== rePassword || email.length < 10
             || password.length < 6 || !email.includes('@')) {
+            alert('Invalid email or password');
+            
             return;
         }
 

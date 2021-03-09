@@ -3,11 +3,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Context from './Context';
 
 const App = (props) => {
-  console.log()
   const [user, setUser] = useState(props.user ? {
     ...props.user,
     loggedIn: true
-  } : null)
+  } : null);
 
   const cookie = document.cookie && null;
 
@@ -19,7 +18,7 @@ const App = (props) => {
     }
 
     setUser({
-      user: email,
+      ...user,
       loggedIn: true
     });
   }, [cookie]);
@@ -32,17 +31,17 @@ const App = (props) => {
       return;
     }
     else {
-      const { idToken } = cookie;
-
       logIn({
-        user: idToken
+        user: cookie
       })
     }
   }, [logIn])
 
   const logOut = () => {
+    document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+
     setUser({
-      loggedIn: false
+      loggedIn: false,
     })
   };
 

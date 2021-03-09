@@ -15,6 +15,12 @@ const CreateWatch = () => {
     const Submit = async (e) => {
         e.preventDefault();
 
+        if(!name || !price || !description || !image || name.length < 4 || description.length < 10
+            || price < 0 || !image.includes('http')) {
+                history.push('/error');
+                return;
+            }
+
         await fetch(`${url}/watches.json`, {
             method: 'POST',
             headers: {
