@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-evenly;
     font-size: 20px;
+    border-radius: 20px;
     background: #0870CF;
     background: -webkit-linear-gradient(left, #0870CF, #9A3C21);
     background: -moz-linear-gradient(left, #0870CF, #9A3C21);

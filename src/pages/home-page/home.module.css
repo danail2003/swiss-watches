@@ -1,0 +1,16 @@
+html { 
+    background: url('../../images//maxresdefault.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.video {
+    width: 100%;
+}
+
+.heading {
+    position: absolute;
+    top: 200px;
+}
