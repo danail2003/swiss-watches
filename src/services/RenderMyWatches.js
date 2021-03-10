@@ -4,7 +4,7 @@ import MyWatch from '../components/my-watch/index';
 const RenderMyWatches = () => {
     const [watches, setWatches] = useState([]);
     const url ='https://swiss-watches-e8910-default-rtdb.firebaseio.com';
-    const creator = document.cookie.slice(5);
+    const creator = localStorage.getItem('user');
 
     const getWatches = useCallback(async () => {
         const promise = await fetch(`${url}/watches.json`, {

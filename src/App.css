@@ -2,3 +2,7 @@ body {
     margin: 50px 100px;
     
 }
+
+.watches {
+    display: flex;
+}

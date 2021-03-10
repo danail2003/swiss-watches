@@ -1,6 +1,6 @@
-import './App.css';
 import React, { useState, useEffect, useCallback } from 'react';
 import Context from './Context';
+import './App.css';
 
 const App = (props) => {
   const [user, setUser] = useState(props.user ? {
@@ -8,37 +8,37 @@ const App = (props) => {
     loggedIn: true
   } : null);
 
-  const cookie = document.cookie && null;
-
+  const item = localStorage.getItem('user') && null;
+  
   const logIn = useCallback((user) => {
-    const email = user ? user.email : cookie;
-
+    const email = user ? user.email : item;
+    
     if (email) {
-      document.cookie = `user=${email}`;
+      localStorage.setItem('user', email);
     }
 
     setUser({
       ...user,
       loggedIn: true
     });
-  }, [cookie]);
+  }, [item]);
 
   useEffect(() => {
-    const cookie = document.cookie;
+    const item = localStorage.getItem('user');
 
-    if (!cookie) {
+    if (!item) {
       logOut();
       return;
     }
     else {
       logIn({
-        user: cookie
+        user: item
       })
     }
   }, [logIn])
 
   const logOut = () => {
-    document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    localStorage.removeItem('user');
 
     setUser({
       loggedIn: false,

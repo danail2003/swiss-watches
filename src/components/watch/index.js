@@ -5,7 +5,7 @@ import styles from './watch.module.css';
 const Watch = (props) => {
     const history = useHistory();
     const url = `https://swiss-watches-e8910-default-rtdb.firebaseio.com`;
-    const loggedIn = document.cookie;
+    const loggedIn = localStorage.getItem('user');
 
     const deleteWatch = async (e) => {
         e.preventDefault();

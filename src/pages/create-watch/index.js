@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import PageLayout from '../../components/page-layout/index';
 import Title from '../../components/title/index';
+import styles from './create.module.css';
 
 const CreateWatch = () => {
     const [name, setName] = useState('');
@@ -10,7 +11,7 @@ const CreateWatch = () => {
     const [image, setImage] = useState('');
     const history = useHistory();
     const url = `https://swiss-watches-e8910-default-rtdb.firebaseio.com`;
-    const creator = document.cookie.slice(5);
+    const creator = localStorage.getItem('user');
 
     const Submit = async (e) => {
         e.preventDefault();

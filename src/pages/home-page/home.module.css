@@ -1,4 +1,4 @@
-html { 
+body { 
     background: url('../../images//maxresdefault.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -8,9 +8,6 @@ html {
 
 .video {
     width: 100%;
-}
-
-.heading {
-    position: absolute;
-    top: 200px;
+    border-radius: 20px;
+    margin: 20px 0;
 }

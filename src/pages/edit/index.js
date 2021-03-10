@@ -12,7 +12,7 @@ const Edit = () => {
     const history = useHistory();
     const id = window.location.pathname;
     const watch = id.slice(7);
-    const creator = document.cookie.slice(5);
+    const creator = localStorage.getItem('user');
 
     const getWatch = useCallback(async () => {
         const request = await fetch(`${url}/watches/${watch}.json`, {
