@@ -39,7 +39,7 @@ const Register = () => {
 
     return (
         <PageLayout>
-            <Title />
+            <Title title='Register' />
             <form onSubmit={Submit}>
                 <fieldset>
                     <legend>Register</legend>

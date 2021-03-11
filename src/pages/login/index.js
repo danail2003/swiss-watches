@@ -47,7 +47,7 @@ const Login = () => {
 
     return (
         <PageLayout>
-            <Title />
+            <Title title='Login' />
             <form onSubmit={Submit}>
                 <fieldset>
                     <legend>Login</legend>
