@@ -32,15 +32,17 @@ const MyWatch = (props) => {
     };
 
     return (
-        <article>
-            <img src={props[1].image} alt='watch' />
-            <div>
+        <article className={styles.watch}>
+            <img className={styles['watch-image']} src={props[1].image} alt='watch' />
+            <div className={styles.info}>
                 <p>{props[1].name}</p>
                 <p>{props[1].description}</p>
                 <p>{props[1].price}</p>
             </div>
-            <button type='submit' id={props[0]} onClick={deleteWatch}>Delete</button>
-            <button onClick={naviagateToEdit}>Edit</button>
+            <div className={styles['account-btns']}>
+                <button type='submit' id={props[0]} onClick={deleteWatch}>Delete</button>
+                <button className={styles.btn} onClick={naviagateToEdit}>Edit</button>
+            </div>
         </article>
     );
 };

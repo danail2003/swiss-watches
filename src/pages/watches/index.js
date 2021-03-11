@@ -1,5 +1,5 @@
 import React from 'react';
-import RenderWatches from '../../services/render-watches';
+import RenderWatches from '../../components/render-watches/RenderWatches';
 import PageLayout from '../../components/page-layout/index';
 import Title from '../../components/title/index';
 

@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Watch from '../components/watch/index';
+import MyWatch from '../my-watch/index';
+import styles from './render-my-watches.module.css';
 
-const RenderWatches = () => {
+const RenderMyWatches = () => {
     const [watches, setWatches] = useState([]);
-    const url ='https://swiss-watches-e8910-default-rtdb.firebaseio.com';
+    const url = 'https://swiss-watches-e8910-default-rtdb.firebaseio.com';
     const creator = localStorage.getItem('user');
 
     const getWatches = useCallback(async () => {
@@ -16,30 +17,28 @@ const RenderWatches = () => {
 
         const watches = await promise.json();
 
-        const array = Object.entries(watches).sort((a, b) => Number(a[1].price) - Number(b[1].price));
+        const array = Object.entries(watches);
 
         setWatches(array);
     }, []);
-    
+
     useEffect(() => {
         getWatches();
     }, [getWatches]);
 
     const render = () => {
         return (
-            <div>
-                {creator ? watches.filter(watch => watch[1].creator !== creator).map((watch, index) => (
-                       <Watch key={index} {...watch} />
-                )) : watches.map((watch, index) => (
-                    <Watch key={index} {...watch} />
+            <div className={styles.watches}>
+                {watches.filter(watch => watch[1].creator === creator).map((watch, index) => (
+                    <MyWatch key={index} {...watch} />
                 ))}
             </div>
         )
     };
 
     return (
-        <>{render()}</>
+        <div>{render()}</div>
     );
 };
 
-export default RenderWatches;
+export default RenderMyWatches;

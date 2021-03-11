@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import Link from '../link/index';
 import getNavigation from '../../services/getNavigation';
 import styles from './header.module.css';
@@ -8,7 +9,12 @@ import Context from '../../Context';
 const Header = () => {
     const { user } = useContext(Context);
     const navigation = getNavigation(user);
+    const history = useHistory();
     const creator = localStorage.getItem('user');
+
+    const goToHome = () => {
+        history.push('/');
+    };
 
     return (
         <header className={styles.heading}>
@@ -17,7 +23,7 @@ const Header = () => {
             </div>
             <div>
                 <div className={styles['heading-logo']}>
-                    <h3>Swiss<img src={logo} alt="logo" className={styles.logo} />Watches</h3>
+                    <h3 onClick={goToHome}>Swiss<img src={logo} alt="logo" className={styles.logo} />Watches</h3>
                     <nav className={styles.nav}>
                         <ul className={styles}>
                             {
