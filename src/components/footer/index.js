@@ -12,9 +12,10 @@ const Footer = () => {
         <footer className={styles}>
             <ul>
                 {
-                    navigation.map((path, index) => {
-                        return <Link key={index} href={path.link} title={path.title} />
-                    })
+                    navigation.filter(nav => { return nav.title === 'About us' || nav.title === 'Contact us' })
+                        .map((path, index) => {
+                            return <Link key={index} href={path.link} title={path.title} />
+                        })
                 }
             </ul>
             <p>All Rights reserved &copy; 2021</p>

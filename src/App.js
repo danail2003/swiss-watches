@@ -48,7 +48,6 @@ const App = (props) => {
   return (
     <Context.Provider value={{
       user,
-      watches: [],
       logIn,
       logOut
     }}>
