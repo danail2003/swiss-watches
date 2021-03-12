@@ -37,7 +37,7 @@ const Login = () => {
             context.logIn({
                 ...response
             });
-            
+
             history.push('/');
         }
         catch (e) {
@@ -48,16 +48,18 @@ const Login = () => {
     return (
         <PageLayout>
             <Title title='Login' />
-            <form onSubmit={Submit}>
-                <fieldset>
-                    <legend>Login</legend>
-                    <label htmlFor='email'>Email</label>
-                    <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} value={email} />
-                    <label htmlFor='password'>Password</label>
-                    <input id='password' type='password' onChange={(e) => setPassword(e.target.value)} value={password} />
-                    <button type='submit'>Login</button>
-                </fieldset>
-            </form>
+            <div className={styles.container}>
+                <form className={styles['login-form']} onSubmit={Submit}>
+                    <fieldset>
+                        <legend>&lt;/&gt;</legend>
+                        <label htmlFor='email'>Email</label>
+                        <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} value={email} />
+                        <label htmlFor='password'>Password</label>
+                        <input id='password' type='password' onChange={(e) => setPassword(e.target.value)} value={password} />
+                        <button type='submit'>Login</button>
+                    </fieldset>
+                </form>
+            </div>
         </PageLayout>
     );
 };

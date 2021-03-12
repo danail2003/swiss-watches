@@ -46,10 +46,10 @@ const CreateWatch = () => {
     return (
         <PageLayout>
             <Title title='Add watch' />
-            <div>
-                <form onSubmit={Submit}>
+            <div className={styles.container}>
+                <form className={styles['create-form']} onSubmit={Submit}>
                     <fieldset>
-                        <legend>Add Watch</legend>
+                        <legend>&lt;/&gt;</legend>
                         <label htmlFor='name'>Name</label>
                         <input id='name' type='text' onChange={(e) => setName(e.target.value)} value={name} />
                         <label htmlFor='desc'>Description</label>
