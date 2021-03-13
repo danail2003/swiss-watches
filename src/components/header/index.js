@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import Link from '../link/index';
-import getNavigation from '../../services/getNavigation';
+import getNavigation from '../../getNavigation';
 import styles from './header.module.css';
 import logo from '../../images/rolex_logo.png';
 import Context from '../../Context';

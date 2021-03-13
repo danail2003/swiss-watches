@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import getNavigation from '../../services/getNavigation';
+import getNavigation from '../../getNavigation';
 import Link from '../link/index';
 import styles from './footer.module.css';
 import Context from '../../Context';

@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.heading {
+    color: white;
+    text-align: center;
+}
+
+.info {
+    padding: 10px;
+    background: rgba( 31, 38, 135, 0.37 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.widget > iframe {
+    border-radius: 10px;
+}
+
+.question {
+    font-size: 25px;
+    margin-top: 30px;
+
+    text-align: center;
+}
