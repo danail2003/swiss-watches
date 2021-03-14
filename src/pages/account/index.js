@@ -19,7 +19,7 @@ const Account = () => {
         <PageLayout>
             <Title title='My account' />
             <div className={styles['sign-out']}>
-                <button onClick={Submit}>Sign out</button>
+                <button className={styles.btn} onClick={Submit}>Sign out</button>
             </div>
             <RenderMyWatches />
         </PageLayout>
