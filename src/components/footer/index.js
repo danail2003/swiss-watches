@@ -9,7 +9,7 @@ const Footer = () => {
     const navigation = getNavigation(user);
 
     return (
-        <footer className={styles}>
+        <footer className={styles.footer}>
             <ul>
                 {
                     navigation.filter(nav => { return nav.title === 'About us' || nav.title === 'Contact us' })

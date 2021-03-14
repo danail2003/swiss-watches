@@ -1,4 +1,4 @@
-footer {
+.footer {
     display: flex;
     justify-content: space-evenly;
     background: rgba( 0, 0, 0, 0.25 );
@@ -8,12 +8,12 @@ footer {
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-ul {
+.footer > ul {
     display: flex;
     margin-right: 150px;
 }
 
-p {
+.footer > p {
     font-family: 'Charmonman', cursive;
     font-weight: bold;
     color: white;

@@ -16,12 +16,19 @@
 
 .watch-image {
     width: 80%;
+    height: 80%;
+    object-fit: cover;
     border-radius: 60px;
     padding: 10px 20px;
 }
 
 .info {
     text-align: center;
+}
+
+.info > p {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
 }
 
 .btn {
