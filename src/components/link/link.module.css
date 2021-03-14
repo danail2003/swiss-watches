@@ -9,10 +9,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    color: #c0c0c0;
-}
-
 li:hover {
     transform: scale(1.3);
 }

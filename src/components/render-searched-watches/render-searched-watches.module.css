@@ -1,0 +1,4 @@
+.watches {
+    display: flex;
+    flex-wrap: wrap;
+}

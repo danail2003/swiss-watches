@@ -40,7 +40,8 @@ const Edit = () => {
 
         if (!name || !price || !description || !image || name.length < 4 || description.length < 10
             || price < 0 || !image.includes('http')) {
-            history.push('/error');
+            alert('Invalid data!');
+            
             return;
         }
 
