@@ -40,8 +40,8 @@ const MyWatch = (props) => {
                 <p>{props[1].price}</p>
             </div>
             <div className={styles['account-btns']}>
-                <button className={styles.btn} type='submit' id={props[0]} onClick={deleteWatch}>Delete</button>
-                <button className={styles.btn} onClick={naviagateToEdit}>Edit</button>
+                <button className={styles['delete-btn']} type='submit' id={props[0]} onClick={deleteWatch}>Delete</button>
+                <button className={styles['edit-btn']} onClick={naviagateToEdit}>Edit</button>
             </div>
         </article>
     );
