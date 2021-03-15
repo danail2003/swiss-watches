@@ -40,7 +40,7 @@ const Edit = () => {
 
         if (!name || !price || !description || !image || name.length < 4 || description.length < 10
             || price < 0 || !image.includes('http')) {
-            alert('Invalid data!');
+            history.push('/error', 'Invalid data!');
             
             return;
         }
@@ -61,9 +61,7 @@ const Edit = () => {
             .then(() => {
                 history.push('/account');
             })
-            .catch((e) => {
-                alert(e.message);
-            });
+            .catch((e) => history.push('/error', e.message));
     };
 
     return (

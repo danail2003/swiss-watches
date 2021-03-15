@@ -16,7 +16,7 @@ const Register = () => {
 
         if (!email || !password || !rePassword || password !== rePassword || email.length < 10
             || password.length < 6 || !email.includes('@')) {
-            alert('Invalid email or password');
+                history.push('/error', 'Invalid email, password or password and Repeat Password are not same!');
 
             return;
         }
@@ -34,7 +34,7 @@ const Register = () => {
             .then(() => {
                 history.push('/login');
             })
-            .catch(e => alert(e.message));
+            .catch(e => history.push('/error', e.message));
     };
 
     return (

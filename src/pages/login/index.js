@@ -16,7 +16,7 @@ const Login = () => {
         e.preventDefault();
 
         if (!email || !password) {
-            alert('Invalid email or password!');
+            history.push('/error', 'Invalid email or password!');
 
             return;
         }
@@ -41,7 +41,7 @@ const Login = () => {
             history.push('/');
         }
         catch (e) {
-            alert(e.message);
+            history.push('/error', e.message)
         }
     };
 
