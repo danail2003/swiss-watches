@@ -10,6 +10,7 @@ const Edit = () => {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
+    const [currency, setCurrency] = useState('$');
     const history = useHistory();
     const id = window.location.pathname;
     const watch = id.slice(7);
@@ -29,6 +30,7 @@ const Edit = () => {
         setDescription(response.description);
         setPrice(response.price);
         setImage(response.image);
+        setCurrency(response.currency);
     }, [watch]);
 
     useEffect(() => {
@@ -41,7 +43,7 @@ const Edit = () => {
         if (!name || !price || !description || !image || name.length < 4 || description.length < 10
             || price < 0 || !image.includes('http')) {
             history.push('/error', 'Invalid data!');
-            
+
             return;
         }
 
@@ -55,6 +57,7 @@ const Edit = () => {
                 description,
                 price,
                 image,
+                currency,
                 creator
             })
         })
@@ -77,6 +80,13 @@ const Edit = () => {
                         <input id='description' type='text' onChange={e => setDescription(e.target.value)} value={description} />
                         <label htmlFor='price'>Price</label>
                         <input id='price' type='text' onChange={e => setPrice(e.target.value)} value={price} />
+                        <label htmlFor='currency'>Choose a currency:</label>
+                        <select id='currency' onChange={(e) => setCurrency(e.target.value)} value={currency}>
+                            <option value='$'>$</option>
+                            <option value='£'>£</option>
+                            <option value='€'>€</option>
+                            <option value='лв.'>лв.</option>
+                        </select>
                         <label htmlFor='image'>Image</label>
                         <input id='image' type='url' onChange={e => setImage(e.target.value)} value={image} />
                         <button type='submit'>Edit</button>

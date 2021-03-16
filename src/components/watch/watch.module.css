@@ -15,8 +15,8 @@
 }
 
 .watch-image {
-    width: 80%;
-    height: 80%;
+    width: 315px;
+    height: 331px;
     object-fit: cover;
     border-radius: 60px;
     padding: 10px 20px;
@@ -26,9 +26,30 @@
     text-align: center;
 }
 
+.info > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .info > p {
     font-family: 'Times New Roman', Times, serif;
     color: white;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.info > div > span,
+.info > div > p {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+span {
+    margin-left: 5px;
 }
 
 .btn {

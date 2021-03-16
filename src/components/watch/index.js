@@ -10,7 +10,7 @@ const Watch = (props) => {
     const deleteWatch = async (e) => {
         e.preventDefault();
 
-        if(!loggedIn) {
+        if (!loggedIn) {
             history.push('/login');
             return;
         }
@@ -35,9 +35,12 @@ const Watch = (props) => {
         <article className={styles.watch}>
             <img src={props[1].image} alt='watch' className={styles['watch-image']} />
             <div className={styles.info}>
-                <p>{props[1].name}</p>
+                <p className={styles.name}>{props[1].name}</p>
                 <p>{props[1].description}</p>
-                <p>{props[1].price}</p>
+                <div>
+                    <p>{props[1].price}</p>
+                    <span>{props[1].currency}</span>
+                </div>
             </div>
             <button className={styles.btn} type='submit' id={props[0]} onClick={deleteWatch}>Buy</button>
         </article>
