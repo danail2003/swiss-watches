@@ -18,6 +18,11 @@
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+.info > p,
+.info > div > p {
+    color: white;
+}
+
 .widget > iframe {
     border-radius: 10px;
 }
@@ -25,6 +30,5 @@
 .question {
     font-size: 25px;
     margin-top: 30px;
-
     text-align: center;
 }

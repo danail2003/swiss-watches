@@ -57,7 +57,7 @@ const CreateWatch = () => {
                         <input id='desc' type='text' onChange={(e) => setDescription(e.target.value)} value={description} />
                         <label htmlFor='price'>Price</label>
                         <input id='price' type='text' onChange={(e) => setPrice(e.target.value)} value={price} />
-                        <label htmlFor='currency'>Choose a currency: </label>
+                        <label htmlFor='currency'>Currency</label>
                         <select id='currency' name='currency' onChange={(e) => setCurrency(e.target.value)} value={currency}>
                             <option value='$'>$</option>
                             <option value='лв.'>лв.</option>
