@@ -27,7 +27,7 @@ const Watch = (props) => {
                 history.push('/');
             })
             .catch((e) => {
-                alert(e.message);
+                history.push('/error', e.message);
             })
     };
 

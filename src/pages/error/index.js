@@ -5,7 +5,6 @@ import image from '../../images/system-failure.gif';
 import styles from './error.module.css';
 
 const Error = (props) => {
-    console.log(props)
     return (
         <PageLayout>
             <Title title={props.location.state} />
