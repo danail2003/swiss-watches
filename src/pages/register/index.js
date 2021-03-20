@@ -3,13 +3,13 @@ import { useHistory } from 'react-router-dom';
 import styles from './register.module.css';
 import Title from '../../components/title/index';
 import PageLayout from '../../components/page-layout/index';
+import Config from '../../Config';
 
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rePassword, setRePassword] = useState('');
     const history = useHistory();
-    const apiKey = 'AIzaSyDYNWoeX46SOv9246LONV9BWFY8JGEoI_0';
 
     const Submit = async (e) => {
         e.preventDefault();
@@ -17,11 +17,10 @@ const Register = () => {
         if (!email || !password || !rePassword || password !== rePassword || email.length < 10
             || password.length < 6 || !email.includes('@')) {
                 history.push('/error', 'Invalid email, password or password and Repeat Password are not same!');
-
             return;
         }
 
-        await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`, {
+        await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${Config.apiKey}`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

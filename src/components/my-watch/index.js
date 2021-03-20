@@ -1,17 +1,17 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './my-watch.module.css';
+import Config from '../../Config';
 
 const MyWatch = (props) => {
     const history = useHistory();
-    const url = `https://swiss-watches-e8910-default-rtdb.firebaseio.com`;
 
     const deleteWatch = async (e) => {
         e.preventDefault();
 
         const id = e.target.getAttribute('id');
 
-        await fetch(`${url}/watches/${id}.json`, {
+        await fetch(`${Config.dataUrl}/watches/${id}.json`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

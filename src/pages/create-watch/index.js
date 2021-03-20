@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import PageLayout from '../../components/page-layout/index';
 import Title from '../../components/title/index';
 import styles from './create.module.css';
+import Config from '../../Config';
 
 const CreateWatch = () => {
     const [name, setName] = useState('');
@@ -11,7 +12,6 @@ const CreateWatch = () => {
     const [image, setImage] = useState('');
     const [currency, setCurrency] = useState('$');
     const history = useHistory();
-    const url = `https://swiss-watches-e8910-default-rtdb.firebaseio.com`;
     const creator = localStorage.getItem('user');
 
     const Submit = async (e) => {
@@ -24,7 +24,7 @@ const CreateWatch = () => {
             return;
         }
 
-        await fetch(`${url}/watches.json`, {
+        await fetch(`${Config.dataUrl}/watches.json`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

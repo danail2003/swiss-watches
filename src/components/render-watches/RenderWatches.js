@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Watch from '../watch/index';
 import styles from './render-watches.module.css';
+import Config from '../../Config';
 
 const RenderWatches = () => {
     const [watches, setWatches] = useState([]);
-    const url ='https://swiss-watches-e8910-default-rtdb.firebaseio.com';
     const creator = localStorage.getItem('user');
 
     const getWatches = useCallback(async () => {
-        const promise = await fetch(`${url}/watches.json`, {
+        const promise = await fetch(`${Config.dataUrl}/watches.json`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

@@ -4,13 +4,13 @@ import styles from './login.module.css';
 import Title from '../../components/title/index';
 import PageLayout from '../../components/page-layout/index';
 import Context from '../../Context';
+import Config from '../../Config';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
     const context = useContext(Context);
-    const apiKey = 'AIzaSyDYNWoeX46SOv9246LONV9BWFY8JGEoI_0';
 
     const Submit = async (e) => {
         e.preventDefault();
@@ -21,27 +21,27 @@ const Login = () => {
             return;
         }
 
-        try {
-            const request = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email,
-                    password,
-                }),
-            });
+        const request = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${Config.apiKey}`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                password,
+            }),
+        });
 
+        if(request.status === 200) {
             const response = await request.json();
             context.logIn({
                 ...response
             });
-
+    
             history.push('/');
         }
-        catch (e) {
-            history.push('/error', e.message)
+        else {
+            history.push('/error', 'Something went wrong!!!');
         }
     };
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './watch.module.css';
+import Config from '../../Config';
 
 const Watch = (props) => {
     const history = useHistory();
-    const url = `https://swiss-watches-e8910-default-rtdb.firebaseio.com`;
     const loggedIn = localStorage.getItem('user');
 
     const deleteWatch = async (e) => {
@@ -17,7 +17,7 @@ const Watch = (props) => {
 
         const id = e.target.getAttribute('id');
 
-        await fetch(`${url}/watches/${id}.json`, {
+        await fetch(`${Config.dataUrl}/watches/${id}.json`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

@@ -3,9 +3,9 @@ import { useHistory } from 'react-router-dom';
 import PageLayout from '../../components/page-layout/index';
 import Title from '../../components/title/index';
 import styles from './edit.module.css';
+import Config from '../../Config';
 
 const Edit = () => {
-    const url = 'https://swiss-watches-e8910-default-rtdb.firebaseio.com';
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
@@ -17,7 +17,7 @@ const Edit = () => {
     const creator = localStorage.getItem('user');
 
     const getWatch = useCallback(async () => {
-        const request = await fetch(`${url}/watches/${watch}.json`, {
+        const request = await fetch(`${Config.dataUrl}/watches/${watch}.json`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ const Edit = () => {
             return;
         }
 
-        await fetch(`${url}/watches/${watch}.json`, {
+        await fetch(`${Config.dataUrl}/watches/${watch}.json`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
