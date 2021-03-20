@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './register.module.css';
 import Title from '../../components/title/index';
 import PageLayout from '../../components/page-layout/index';
@@ -16,7 +17,7 @@ const Register = () => {
 
         if (!email || !password || !rePassword || password !== rePassword || email.length < 10
             || password.length < 6 || !email.includes('@')) {
-                history.push('/error', 'Invalid email, password or password and Repeat Password are not same!');
+            history.push('/error', 'Invalid email, password or password and Repeat Password are not same!');
             return;
         }
 
@@ -50,6 +51,7 @@ const Register = () => {
                         <label htmlFor='re-password'>Repeat Password</label>
                         <input id='re-password' type='password' onChange={(e) => setRePassword(e.target.value)} value={rePassword} />
                         <button type='submit'>Register</button>
+                        <Link to='/login' className={styles['login-link']}>Already registered?</Link>
                     </fieldset>
                 </form>
             </div>

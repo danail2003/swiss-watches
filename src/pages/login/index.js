@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './login.module.css';
 import Title from '../../components/title/index';
 import PageLayout from '../../components/page-layout/index';
@@ -32,12 +33,12 @@ const Login = () => {
             }),
         });
 
-        if(request.status === 200) {
+        if (request.status === 200) {
             const response = await request.json();
             context.logIn({
                 ...response
             });
-    
+
             history.push('/');
         }
         else {
@@ -57,6 +58,7 @@ const Login = () => {
                         <label htmlFor='password'>Password</label>
                         <input id='password' type='password' onChange={(e) => setPassword(e.target.value)} value={password} />
                         <button type='submit'>Login</button>
+                        <Link to='/register' className={styles['register-link']}>Don't have account?</Link>
                     </fieldset>
                 </form>
             </div>
