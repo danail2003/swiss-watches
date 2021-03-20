@@ -15,7 +15,7 @@
 
 .heading-logo {
     display: flex;
-    align-items: flex-end;
+    align-items: baseline;
 }
 
 .heading-logo > h3 {

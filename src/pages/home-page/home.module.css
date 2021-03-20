@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Charmonman&display=swap');
+
 body {
     background: url('../../images/maxresdefault.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -6,7 +8,15 @@ body {
     background-size: cover;
 }
 
-.video {
+.header {
+    font-family: 'Charmonman', cursive;
+    color: white;
+    position: absolute;
+    top: 150px;
+    left: 520px;
+}
+
+.image {
     width: 100%;
     border-radius: 20px;
     margin: 20px 0;
