@@ -10,10 +10,10 @@ const Contact = () => {
             <div className={styles.container}>
                 <section className={styles.info}>
                     <h2 className={styles.heading}>Swiss Watches</h2>
-                    <p>str. V. Levski №7899, Dulovo, Silistra, Bulgaria</p>
-                    <p>tel: 0888888888</p>
-                    <p>fax: 0888888889</p>
-                    <p>email: someone@some.bg</p>
+                    <p><strong>str.</strong> V. Levski №7899, Dulovo, Silistra, Bulgaria</p>
+                    <p><strong>tel:</strong> 0888888888</p>
+                    <p><strong>fax:</strong> 0888888889</p>
+                    <p><strong>email:</strong> someone@some.bg</p>
                     <div>
                         <p className={styles.question}>If you have some question, please contact us!!!</p>
                     </div>
