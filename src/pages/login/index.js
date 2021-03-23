@@ -35,9 +35,7 @@ const Login = () => {
 
         if (request.status === 200) {
             const response = await request.json();
-            context.logIn({
-                ...response
-            });
+            context.logIn(response);
 
             history.push('/');
         }
