@@ -5,10 +5,13 @@ Other millionaries can see these watches and if they like one of them, they can 
 Publisher of watch can edit price, description, image, name and currency anytime.
 Earn some million and come see.
 
-## Architecture
 
-### src folder with
-#### components folder
+
+# Architecture
+
+
+## src folder with
+### components folder
 #### footer component
 #### header component
 #### link component
@@ -19,6 +22,8 @@ Earn some million and come see.
 #### render-searched-watches component
 #### title component
 #### watch component
+
+
 
 ### pages folder
 #### about page
@@ -32,13 +37,20 @@ Earn some million and come see.
 #### register page
 #### watches page
 
+
+
 ### images folder
 
+
+
 ## Getting Started
+
+
 
 ## Prerequisites
 ### For installing the app is required a VS Code and GitHub profile for downloading.
 ### Start application with `yarn start`.
+
 
 ## Running the tests
 Test will run with command `yarn test`
@@ -53,5 +65,7 @@ Tests check whether the components render.
 ### react-router-dom - library for routing
 ### jest and react-testing-library - libraries for unit testing
 
-## Author
+
+
+# Author
 Danail Dobrev - SoftUni student
