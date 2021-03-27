@@ -28,6 +28,10 @@ legend {
     border-radius: 100%;
 }
 
+button {
+    outline: none;
+}
+
 button:hover {
     cursor: pointer;
     letter-spacing: 2px;

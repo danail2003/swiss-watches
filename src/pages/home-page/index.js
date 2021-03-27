@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <PageLayout>
             <main>
-                <h1 className={styles.header}>Best watches site ever</h1>
+                <h1 className={styles.header}>The best site for watches</h1>
                 <img src={image} alt='swiss-watches' className={styles.image}></img>
             </main>
         </PageLayout>
