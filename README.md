@@ -1,9 +1,9 @@
 # Swiss-Watches
 
-This web-site is for millionairies who are tired of their swiss watches and have decided to sell them on the web-site.
-Other millionairies can see these watches and if they like one of them, they can buy it for the corresponding price.
+This website is for millionaires who are tired of their swiss watches and have decided to sell them using the website.
+Other millionaires can see these watches and if they like one of them, they can buy it for the corresponding price.
 The publisher of the watch can edit the price, description, image, name and currency anytime.
-Earn some millions and check them out.
+Earn some millions and come check them out.
 
 
 
@@ -58,7 +58,7 @@ Earn some millions and check them out.
 
 
 ## Prerequisites
-### - For installing the app is required a VS Code and GitHub profile for downloading.
+### - For the installation of the app is required a VS Code and also a GitHub profile so you can download it.
 ### - Start application with `yarn start`.
 
 

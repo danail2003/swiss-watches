@@ -1,6 +1,6 @@
 const urls = {
-    apiKey: 'AIzaSyDYNWoeX46SOv9246LONV9BWFY8JGEoI_0',
-    dataUrl: 'https://swiss-watches-e8910-default-rtdb.firebaseio.com'
+    apiKey: 'AIzaSyBpBJm9YcMWYgMWXlTJF3mF0MIVAXST-Y4',
+    dataUrl: 'https://swiss-watches-8fda2-default-rtdb.firebaseio.com'
 };
 
 export default urls;
