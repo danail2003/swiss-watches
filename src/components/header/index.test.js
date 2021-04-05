@@ -1,8 +1,8 @@
 import React from 'react';
-import {render} from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Header from './index';
 import Context from '../../Context';
-import {Route, BrowserRouter} from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import getNavigation from '../../getNavigation';
 
 describe('Header', () => {

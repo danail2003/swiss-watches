@@ -1,63 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer should render correctly 1`] = `
+exports[`Title title should render 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <footer
-        class="footer"
-      >
-        <ul>
-          <li>
-            <a
-              class="link"
-              href="/about"
-            >
-              About us
-            </a>
-          </li>
-          <li>
-            <a
-              class="link"
-              href="/contact"
-            >
-              Contact us
-            </a>
-          </li>
-        </ul>
-        <p>
-          © Copyrights 2021 All Rights reserved.
-        </p>
-      </footer>
+      <h1
+        class="title"
+      />
     </div>
   </body>,
   "container": <div>
-    <footer
-      class="footer"
-    >
-      <ul>
-        <li>
-          <a
-            class="link"
-            href="/about"
-          >
-            About us
-          </a>
-        </li>
-        <li>
-          <a
-            class="link"
-            href="/contact"
-          >
-            Contact us
-          </a>
-        </li>
-      </ul>
-      <p>
-        © Copyrights 2021 All Rights reserved.
-      </p>
-    </footer>
+    <h1
+      class="title"
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
