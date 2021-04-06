@@ -1,6 +1,6 @@
 import React from 'react';
 import RenderWatches from '../../components/render-watches/RenderWatches';
-import RenderSearchedWatches from '../../components/render-searched-watches/index';
+import RenderSearchedWatches from '../../components/render-searched-watches/RenderSearchedWatches';
 import PageLayout from '../../components/page-layout/index';
 import Title from '../../components/title/index';
 
