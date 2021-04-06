@@ -25,11 +25,11 @@
 }
 
 .first-paragraph {
-    bottom: 150px;
+    bottom: 250px;
     left: 150px;
 }
 
 .second-paragraph {
-    bottom: -150px;
-    left: 750px;
+    bottom: -100px;
+    left: 870px;
 }

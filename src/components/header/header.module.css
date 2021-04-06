@@ -53,6 +53,10 @@
     color: white;
 }
 
+.creator-wrapper {
+    flex-basis: 100%;
+}
+
 i {
     color: white;
     margin-left: 5px;

@@ -25,7 +25,7 @@ const Header = () => {
 
     return (
         <header className={styles.heading}>
-            <div>
+            <div className={styles['creator-wrapper']}>
                 {creator ? <span className={styles.creator}>{`Welcome, ${creator}`}</span> : null}
             </div>
             <div>
