@@ -5,6 +5,7 @@ import styles from './register.module.css';
 import Title from '../../components/title/index';
 import PageLayout from '../../components/page-layout/index';
 import Config from '../../Config';
+import requester from '../../services/requester';
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -21,7 +22,13 @@ const Register = () => {
             return;
         }
 
-        await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${Config.apiKey}`, {
+        await requester(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${Config.apiKey}`, 'POST', { email, password })
+            .then(() => {
+                history.push('/login');
+            })
+            .catch(e => history.push('/error', e.message));
+
+        /*await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${Config.apiKey}`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -34,7 +41,7 @@ const Register = () => {
             .then(() => {
                 history.push('/login');
             })
-            .catch(e => history.push('/error', e.message));
+            .catch(e => history.push('/error', e.message));*/
     };
 
     return (

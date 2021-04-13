@@ -4,6 +4,7 @@ import PageLayout from '../../components/page-layout/index';
 import Title from '../../components/title/index';
 import styles from './edit.module.css';
 import Config from '../../Config';
+import requester from '../../services/requester';
 
 const Edit = () => {
     const [name, setName] = useState('');
@@ -17,12 +18,7 @@ const Edit = () => {
     const creator = localStorage.getItem('user');
 
     const getWatch = useCallback(async () => {
-        const request = await fetch(`${Config.dataUrl}/watches/${watch}.json`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        const request = await requester(`${Config.dataUrl}/watches/${watch}.json`, 'GET');
 
         const response = await request.json();
 
@@ -47,12 +43,8 @@ const Edit = () => {
             return;
         }
 
-        await fetch(`${Config.dataUrl}/watches/${watch}.json`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
+        await requester(`${Config.dataUrl}/watches/${watch}.json`, 'PUT',
+            {
                 name,
                 description,
                 price,
@@ -60,7 +52,6 @@ const Edit = () => {
                 currency,
                 creator
             })
-        })
             .then(() => {
                 history.push('/account');
             })

@@ -41,12 +41,19 @@ Earn some millions and come check them out.
 
 ### - images folder
 
+
+
+### - services
+#### - getNavigation
+#### - requester
+
+
+
 #### - Config.js
 #### - App.js
 #### - App.css
 #### - Context.js
 #### - ErrorBoundary.js
-#### - getNavigation.js
 #### - Navigation
 #### - index.js
 #### - index.css

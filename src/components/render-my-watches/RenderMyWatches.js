@@ -2,18 +2,14 @@ import React, { useState, useEffect, useCallback } from 'react';
 import MyWatch from '../my-watch/index';
 import styles from './render-my-watches.module.css';
 import Config from '../../Config';
+import requester from '../../services/requester';
 
 const RenderMyWatches = () => {
     const [watches, setWatches] = useState([]);
     const creator = localStorage.getItem('user');
 
     const getWatches = useCallback(async () => {
-        const promise = await fetch(`${Config.dataUrl}/watches.json`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        const promise = await requester(`${Config.dataUrl}/watches.json`, 'GET');
 
         const watches = await promise.json();
 

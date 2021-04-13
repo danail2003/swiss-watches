@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './watch.module.css';
 import Config from '../../Config';
+import requester from '../../services/requester';
 
 const Watch = (props) => {
     const history = useHistory();
@@ -17,12 +18,7 @@ const Watch = (props) => {
 
         const id = e.target.getAttribute('id');
 
-        await fetch(`${Config.dataUrl}/watches/${id}.json`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+        await requester(`${Config.dataUrl}/watches/${id}.json`, 'DELETE')
             .then(() => {
                 history.push('/');
             })

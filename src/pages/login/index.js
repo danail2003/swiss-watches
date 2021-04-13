@@ -6,6 +6,7 @@ import Title from '../../components/title/index';
 import PageLayout from '../../components/page-layout/index';
 import Context from '../../Context';
 import Config from '../../Config';
+import requester from '../../services/requester';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -22,16 +23,8 @@ const Login = () => {
             return;
         }
 
-        const request = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${Config.apiKey}`, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                email,
-                password,
-            }),
-        });
+        const request = await requester(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${Config.apiKey}`,
+            'POST', { email, password });
 
         if (request.status === 200) {
             const response = await request.json();

@@ -4,6 +4,7 @@ import PageLayout from '../../components/page-layout/index';
 import Title from '../../components/title/index';
 import styles from './create.module.css';
 import Config from '../../Config';
+import requester from '../../services/requester';
 
 const CreateWatch = () => {
     const [name, setName] = useState('');
@@ -24,12 +25,8 @@ const CreateWatch = () => {
             return;
         }
 
-        await fetch(`${Config.dataUrl}/watches.json`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
+        await requester(`${Config.dataUrl}/watches.json`, 'POST',
+            {
                 name,
                 description,
                 price,
@@ -37,7 +34,6 @@ const CreateWatch = () => {
                 currency,
                 creator
             })
-        })
             .then(() => {
                 history.push('/');
             })

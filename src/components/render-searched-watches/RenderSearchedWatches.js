@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Watch from '../watch/index';
 import styles from './render-searched-watches.module.css';
 import Config from '../../Config';
+import requester from '../../services/requester';
 
 const RenderSearchedWatches = () => {
     const [watches, setWatches] = useState([]);
@@ -9,12 +10,7 @@ const RenderSearchedWatches = () => {
     const searchedWatches = window.location.pathname.slice(16);
 
     const getWatches = useCallback(async () => {
-        const promise = await fetch(`${Config.dataUrl}/watches.json`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        const promise = await requester(`${Config.dataUrl}/watches.json`, 'GET');
 
         const watches = await promise.json();
 
@@ -22,7 +18,7 @@ const RenderSearchedWatches = () => {
 
         setWatches(array);
     }, []);
-    
+
     useEffect(() => {
         getWatches();
     }, [getWatches]);
@@ -31,7 +27,7 @@ const RenderSearchedWatches = () => {
         return (
             <div className={styles.watches}>
                 {watches.filter(watch => watch[1].creator !== creator && watch[1].name.includes(searchedWatches)).map((watch, index) => (
-                       <Watch key={index} {...watch} />))}
+                    <Watch key={index} {...watch} />))}
             </div>
         )
     };

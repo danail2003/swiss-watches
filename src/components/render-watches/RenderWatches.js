@@ -2,18 +2,14 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Watch from '../watch/index';
 import styles from './render-watches.module.css';
 import Config from '../../Config';
+import requester from '../../services/requester';
 
 const RenderWatches = () => {
     const [watches, setWatches] = useState([]);
     const creator = localStorage.getItem('user');
 
     const getWatches = useCallback(async () => {
-        const promise = await fetch(`${Config.dataUrl}/watches.json`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        const promise = await requester(`${Config.dataUrl}/watches.json`, 'GET');
 
         const watches = await promise.json();
 
@@ -21,7 +17,7 @@ const RenderWatches = () => {
 
         setWatches(array);
     }, []);
-    
+
     useEffect(() => {
         getWatches();
     }, [getWatches]);
@@ -30,7 +26,7 @@ const RenderWatches = () => {
         return (
             <div className={styles.watches}>
                 {creator ? watches.filter(watch => watch[1].creator !== creator).map((watch, index) => (
-                       <Watch key={index} {...watch} />
+                    <Watch key={index} {...watch} />
                 )) : watches.map((watch, index) => (
                     <Watch key={index} {...watch} />
                 ))}
