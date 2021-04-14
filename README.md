@@ -11,39 +11,39 @@ Earn some millions and come check them out.
 
 
 ## src folder with
-### - components folder
-#### -- footer component
-#### -- header component
-#### -- link component
-#### -- my-watch component
-#### -- page-layout component
-#### -- render-watches component
-#### -- render-my-watches component
-#### -- render-searched-watches component
-#### -- title component
-#### -- watch component
+### components folder
+#### - footer component
+#### - header component
+#### - link component
+#### - my-watch component
+#### - page-layout component
+#### - render-watches component
+#### - render-my-watches component
+#### - render-searched-watches component
+#### - title component
+#### - watch component
 
 
 
-### - pages folder
-#### -- about page
-#### -- account page
-#### -- contact page
-#### -- create-watch page
-#### -- edit page
-#### -- error page
-#### -- home page
-#### -- login page
-#### -- register page
-#### -- watches page
+### pages folder
+#### - about page
+#### - account page
+#### - contact page
+#### - create-watch page
+#### - edit page
+#### - error page
+#### - home page
+#### - login page
+#### - register page
+#### - watches page
 
 
 
-### - images folder
+### images folder
 
 
 
-### - services
+### services
 #### - getNavigation
 #### - requester
 
