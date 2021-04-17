@@ -21,7 +21,7 @@ const MyWatch = (props) => {
             })
     };
 
-    const naviagateToEdit = (e) => {
+    const navigateToEdit = (e) => {
         e.preventDefault();
 
         history.push(`/edit/:${props[0]}`);
@@ -40,7 +40,7 @@ const MyWatch = (props) => {
             </div>
             <div className={styles['account-btns']}>
                 <button className={styles['delete-btn']} type='submit' id={props[0]} onClick={deleteWatch}>Delete</button>
-                <button className={styles['edit-btn']} onClick={naviagateToEdit}>Edit</button>
+                <button className={styles['edit-btn']} onClick={navigateToEdit}>Edit</button>
             </div>
         </article>
     );
