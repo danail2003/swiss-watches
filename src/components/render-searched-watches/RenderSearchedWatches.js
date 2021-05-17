@@ -7,14 +7,21 @@ import requester from '../../services/requester';
 const RenderSearchedWatches = () => {
     const [watches, setWatches] = useState([]);
     const creator = localStorage.getItem('user');
-    const searchedWatches = window.location.pathname.slice(16);
+    const searchedWatches = window.location.pathname;
+    console.log(searchedWatches)
 
     const getWatches = useCallback(async () => {
         const promise = await requester(`${Config.dataUrl}/watches.json`, 'GET');
+        let array = [];
 
         const watches = await promise.json();
 
-        const array = Object.entries(watches).sort((a, b) => Number(a[1].price) - Number(b[1].price));
+        if (!watches) {
+            return null;
+        }
+        else {
+            array = Object.entries(watches).sort((a, b) => Number(a[1].price) - Number(b[1].price));
+        }
 
         setWatches(array);
     }, []);

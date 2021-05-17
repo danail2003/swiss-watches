@@ -12,8 +12,14 @@ const RenderWatches = () => {
         const promise = await requester(`${Config.dataUrl}/watches.json`, 'GET');
 
         const watches = await promise.json();
+        let array = [];
 
-        const array = Object.entries(watches).sort((a, b) => Number(a[1].price) - Number(b[1].price));
+        if (!watches) {
+            return null;
+        }
+        else {
+            array = Object.entries(watches).sort((a, b) => Number(a[1].price) - Number(b[1].price));
+        }
 
         setWatches(array);
     }, []);

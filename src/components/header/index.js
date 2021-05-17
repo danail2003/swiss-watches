@@ -20,7 +20,7 @@ const Header = () => {
     const findWatches = (e) => {
         e.preventDefault();
 
-        history.push(`/watches/search=${searchedWatch}`);
+        history.push(`/watches/?search=${searchedWatch}`);
     };
 
     return (

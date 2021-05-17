@@ -12,6 +12,7 @@ const CreateWatch = () => {
     const [description, setDescription] = useState('');
     const [image, setImage] = useState('');
     const [currency, setCurrency] = useState('$');
+    const [qty, setQty] = useState(0);
     const history = useHistory();
     const creator = localStorage.getItem('user');
 
@@ -19,7 +20,7 @@ const CreateWatch = () => {
         e.preventDefault();
 
         if (!name || !price || !description || !image || name.length < 4 || description.length < 10
-            || price < 0) {
+            || price < 0 || qty < 1) {
             history.push('/error', 'Invalid data!');
 
             return;
@@ -32,7 +33,8 @@ const CreateWatch = () => {
                 price,
                 image,
                 currency,
-                creator
+                creator,
+                qty
             })
             .then(() => {
                 history.push('/');
@@ -62,6 +64,8 @@ const CreateWatch = () => {
                         </select>
                         <label htmlFor='image'>Image</label>
                         <input id='image' type='url' onChange={(e) => setImage(e.target.value)} value={image} />
+                        <label htmlFor='qty'>Quantity</label>
+                        <input id='qty' type='number' min='1' onChange={(e) => setQty(e.target.value)} value={qty} />
                         <button type='submit'>Add</button>
                     </fieldset>
                 </form>

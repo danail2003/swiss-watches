@@ -10,11 +10,17 @@ const RenderMyWatches = () => {
 
     const getWatches = useCallback(async () => {
         const promise = await requester(`${Config.dataUrl}/watches.json`, 'GET');
+        let array = [];
 
         const watches = await promise.json();
 
-        const array = Object.entries(watches);
-
+        if (!watches) {
+            return null;
+        }
+        else {
+            array = Object.entries(watches);
+        }
+        
         setWatches(array);
     }, []);
 
