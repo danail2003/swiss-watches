@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import styles from './my-watch.module.css';
 import Config from '../../Config';
 import requester from '../../services/requester';
+import Button from '../button/index';
 
 const MyWatch = (props) => {
     const history = useHistory();
@@ -39,8 +40,8 @@ const MyWatch = (props) => {
                 </div>
             </div>
             <div className={styles['account-btns']}>
-                <button className={styles['delete-btn']} type='submit' id={props[0]} onClick={deleteWatch}>Delete</button>
-                <button className={styles['edit-btn']} onClick={navigateToEdit}>Edit</button>
+                <Button className={styles['delete-btn']} type='submit' id={props[0]} onClick={deleteWatch} name='Delete' />
+                <Button className={styles['edit-btn']} type='submit' onClick={navigateToEdit} name='Edit' />
             </div>
         </article>
     );

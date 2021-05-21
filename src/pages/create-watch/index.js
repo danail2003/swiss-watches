@@ -5,6 +5,7 @@ import Title from '../../components/title/index';
 import styles from './create.module.css';
 import Config from '../../Config';
 import requester from '../../services/requester';
+import Button from '../../components/button/index';
 
 const CreateWatch = () => {
     const [name, setName] = useState('');
@@ -66,7 +67,7 @@ const CreateWatch = () => {
                         <input id='image' type='url' onChange={(e) => setImage(e.target.value)} value={image} />
                         <label htmlFor='qty'>Quantity</label>
                         <input id='qty' type='number' min='1' onChange={(e) => setQty(e.target.value)} value={qty} />
-                        <button type='submit'>Add</button>
+                        <Button type='submit' name='Add' />
                     </fieldset>
                 </form>
             </div>

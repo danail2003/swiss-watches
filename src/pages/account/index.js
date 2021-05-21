@@ -5,6 +5,7 @@ import Title from '../../components/title/index';
 import Context from '../../Context';
 import RenderMyWatches from '../../components/render-my-watches/RenderMyWatches';
 import styles from './account.module.css';
+import Button from '../../components/button/index';
 
 const Account = () => {
     const context = useContext(Context);
@@ -19,7 +20,7 @@ const Account = () => {
         <PageLayout>
             <Title title='My account' />
             <div className={styles['sign-out']}>
-                <button className={styles.btn} onClick={Submit}>Sign out</button>
+                <Button className={styles.btn} onClick={Submit} name='Sign out' />
             </div>
             <RenderMyWatches />
         </PageLayout>

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import styles from './watch.module.css';
 import Config from '../../Config';
 import requester from '../../services/requester';
+import Button from '../button/index';
 
 const Watch = (props) => {
     const history = useHistory();
@@ -38,7 +39,7 @@ const Watch = (props) => {
                     <span>{props[1].currency}</span>
                 </div>
             </div>
-            <button className={styles.btn} type='submit' id={props[0]} onClick={deleteWatch}>Buy</button>
+            <Button className={styles.btn} type='submit' id={props[0]} onClick={deleteWatch} name='Buy' />
         </article>
     );
 };

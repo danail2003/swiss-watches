@@ -6,6 +6,7 @@ import Title from '../../components/title/index';
 import PageLayout from '../../components/page-layout/index';
 import Config from '../../Config';
 import requester from '../../services/requester';
+import Button from '../../components/button/index';
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -27,21 +28,6 @@ const Register = () => {
                 history.push('/login');
             })
             .catch(e => history.push('/error', e.message));
-
-        /*await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${Config.apiKey}`, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                email,
-                password
-            })
-        })
-            .then(() => {
-                history.push('/login');
-            })
-            .catch(e => history.push('/error', e.message));*/
     };
 
     return (
@@ -57,7 +43,7 @@ const Register = () => {
                         <input id='password' type='password' onChange={(e) => setPassword(e.target.value)} value={password} />
                         <label htmlFor='re-password'>Repeat Password</label>
                         <input id='re-password' type='password' onChange={(e) => setRePassword(e.target.value)} value={rePassword} />
-                        <button type='submit'>Register</button>
+                        <Button type='submit' name='Register' />
                         <Link to='/login' className={styles['login-link']}>Already registered?</Link>
                     </fieldset>
                 </form>

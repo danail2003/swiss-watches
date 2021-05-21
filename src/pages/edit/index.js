@@ -5,6 +5,7 @@ import Title from '../../components/title/index';
 import styles from './edit.module.css';
 import Config from '../../Config';
 import requester from '../../services/requester';
+import Button from '../../components/button/index';
 
 const Edit = () => {
     const [name, setName] = useState('');
@@ -80,7 +81,7 @@ const Edit = () => {
                         </select>
                         <label htmlFor='image'>Image</label>
                         <input id='image' type='url' onChange={e => setImage(e.target.value)} value={image} />
-                        <button type='submit'>Edit</button>
+                        <Button type='submit' name='Edit' />
                     </fieldset>
                 </form>
             </div>

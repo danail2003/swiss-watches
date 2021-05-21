@@ -7,6 +7,7 @@ import PageLayout from '../../components/page-layout/index';
 import Context from '../../Context';
 import Config from '../../Config';
 import requester from '../../services/requester';
+import Button from '../../components/button/index';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -48,7 +49,7 @@ const Login = () => {
                         <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} value={email} />
                         <label htmlFor='password'>Password</label>
                         <input id='password' type='password' onChange={(e) => setPassword(e.target.value)} value={password} />
-                        <button type='submit'>Login</button>
+                        <Button type='submit' name='Login' />
                         <Link to='/register' className={styles['register-link']}>Don't have account?</Link>
                     </fieldset>
                 </form>
