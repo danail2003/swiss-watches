@@ -20,7 +20,7 @@ const Watch = (props) => {
         const id = e.target.getAttribute('id');
 
         const request = await requester(`${Config.dataUrl}/watches/${id}.json`, 'GET');
-        const watch = await request.json();
+        let watch = await request.json();
 
         if (watch.qty === 1) {
             await requester(`${Config.dataUrl}/watches/${id}.json`, 'DELETE')
@@ -33,15 +33,22 @@ const Watch = (props) => {
         }
         else {
             watch.qty -= 1;
+            const { creator, name, description, price, image, qty, currency } = watch;
             await requester(`${Config.dataUrl}/watches/${id}.json`, 'PUT', {
-                watch
+                creator,
+                description,
+                currency,
+                image,
+                name,
+                price,
+                qty
             })
-            .then(() => {
+                .then(() => {
 
-            })
-            .catch((e) => {
-                history.push("/error", e.message);
-            })
+                })
+                .catch((e) => {
+                    history.push("/error", e.message);
+                })
         }
     };
 

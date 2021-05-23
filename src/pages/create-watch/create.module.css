@@ -30,6 +30,10 @@
     padding: 7px;
 }
 
+textarea {
+    min-height: 100px;
+}
+
 .create-form > fieldset > div > label {
     color: white;
     margin-bottom: 15px;

@@ -6,7 +6,7 @@ body {
     display: flex;
 }
 
-input {
+input, textarea {
     outline: none;
     color: white;
     background: rgba( 255, 255, 255, 0.25 );

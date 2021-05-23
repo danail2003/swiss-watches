@@ -53,7 +53,7 @@ const CreateWatch = () => {
                         <label htmlFor='name'>Name</label>
                         <input id='name' type='text' onChange={(e) => setName(e.target.value)} value={name} />
                         <label htmlFor='desc'>Description</label>
-                        <input id='desc' type='text' onChange={(e) => setDescription(e.target.value)} value={description} />
+                        <textarea id='desc' type='text' onChange={(e) => setDescription(e.target.value)} value={description} />
                         <label htmlFor='price'>Price</label>
                         <input id='price' type='text' onChange={(e) => setPrice(e.target.value)} value={price} />
                         <label htmlFor='currency'>Currency</label>
