@@ -19,13 +19,30 @@ const Watch = (props) => {
 
         const id = e.target.getAttribute('id');
 
-        await requester(`${Config.dataUrl}/watches/${id}.json`, 'DELETE')
+        const request = await requester(`${Config.dataUrl}/watches/${id}.json`, 'GET');
+        const watch = await request.json();
+
+        if (watch.qty === 1) {
+            await requester(`${Config.dataUrl}/watches/${id}.json`, 'DELETE')
+                .then(() => {
+
+                })
+                .catch((e) => {
+                    history.push('/error', e.message);
+                })
+        }
+        else {
+            watch.qty -= 1;
+            await requester(`${Config.dataUrl}/watches/${id}.json`, 'PUT', {
+                watch
+            })
             .then(() => {
-                history.push('/');
+
             })
             .catch((e) => {
-                history.push('/error', e.message);
+                history.push("/error", e.message);
             })
+        }
     };
 
     return (
