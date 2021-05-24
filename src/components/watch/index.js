@@ -17,7 +17,7 @@ const Watch = (props) => {
 
         const id = e.target.getAttribute('id');
 
-        history.push('/orders', id);
+        history.push(`/orders/${id}`);
     };
 
     return (
