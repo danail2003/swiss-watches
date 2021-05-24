@@ -11,6 +11,7 @@ import Error from './pages/error/index';
 import Context from './Context';
 import Watches from './pages/watches/index';
 import Edit from './pages/edit/index';
+import Order from './pages/order/index';
 
 const Navigation = () => {
     const context = useContext(Context);
@@ -37,6 +38,9 @@ const Navigation = () => {
                 </Route>
                 <Route path='/edit'>
                     {loggedIn ? (<Edit />) : (<Redirect to='/' />)}
+                </Route>
+                <Route path='/orders'>
+                    {loggedIn ? <Order /> : <Redirect to='/' />}
                 </Route>
                 <Route component={Error} />
             </Switch>
