@@ -89,7 +89,7 @@ const Order = () => {
                         <input id='lastName' onChange={(e) => setLastName(e.target.value)} value={lastName} />
                         <label htmlFor='address'>Address</label>
                         <input id='address' onChange={(e) => setAddress(e.target.value)} value={address} />
-                        <label thtmlFor='email'>Email</label>
+                        <label htmlFor='email'>Email</label>
                         <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} value={email} />
                         <label htmlFor='phone'>Phone Number</label>
                         <input id='phone' onChange={(e) => setNumber(e.target.value)} value={number} />

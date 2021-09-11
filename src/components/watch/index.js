@@ -7,17 +7,17 @@ const Watch = (props) => {
     const history = useHistory();
     const loggedIn = localStorage.getItem('user');
 
-    const makeOrder = async (e) => {
+    const seeWatch = (e) => {
         e.preventDefault();
 
-        if (!loggedIn) {
+        if(!loggedIn) {
             history.push('/login');
             return;
         }
 
         const id = e.target.getAttribute('id');
 
-        history.push(`/orders/${id}`);
+        history.push(`/details/${id}`);
     };
 
     return (
@@ -31,7 +31,7 @@ const Watch = (props) => {
                     <span>{props[1].currency}</span>
                 </div>
             </div>
-            <Button className={styles.btn} type='submit' id={props[0]} onClick={makeOrder} name='Buy' />
+            <Button className={styles.btn} type='submit' id={props[0]} onClick={seeWatch} name='See more' />
         </article>
     );
 };

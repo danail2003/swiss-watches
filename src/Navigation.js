@@ -12,6 +12,7 @@ import Context from './Context';
 import Watches from './pages/watches/index';
 import Edit from './pages/edit/index';
 import Order from './pages/order/index';
+import Details from './pages/details';
 
 const Navigation = () => {
     const context = useContext(Context);
@@ -40,7 +41,10 @@ const Navigation = () => {
                     {loggedIn ? (<Edit />) : (<Redirect to='/' />)}
                 </Route>
                 <Route path='/orders'>
-                    {loggedIn ? <Order /> : <Redirect to='/' />}
+                    {loggedIn ? <Order /> : <Redirect to='/login' />}
+                </Route>
+                <Route path='/details'>
+                    {loggedIn ? <Details /> : <Redirect to='/login' />}
                 </Route>
                 <Route component={Error} />
             </Switch>

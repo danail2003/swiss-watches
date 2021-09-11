@@ -6,6 +6,7 @@
 .btn {
     color: white;
     padding: 5px 15px;
+    margin-bottom: 5px;
     background: rgba( 74, 144, 226, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     border-radius: 10px;
