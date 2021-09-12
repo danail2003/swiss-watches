@@ -59,7 +59,7 @@ const CreateWatch = () => {
                         <label htmlFor='currency'>Currency</label>
                         <select id='currency' name='currency' onChange={(e) => setCurrency(e.target.value)} value={currency}>
                             <option value='$'>$</option>
-                            <option value='лв.'>лв.</option>
+                            <option value='BGN'>BGN</option>
                             <option value='£'>£</option>
                             <option value='€'>€</option>
                         </select>

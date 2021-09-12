@@ -5,6 +5,8 @@ import PageLayout from "../../components/page-layout";
 import Title from "../../components/title";
 import requester from "../../services/requester";
 import Config from '../../Config';
+import style from './details.module.css';
+import NumberFormat from 'react-number-format';
 
 const Details = () => {
     const id = window.location.pathname.slice(9);
@@ -39,11 +41,16 @@ const Details = () => {
     return (
         <PageLayout>
             <Title title='Details' />
-            <div>
-                <h1>{watch.name}</h1>
-                <img src={watch.image} alt='watch' />
-                <p>{watch.description}</p>
-                <Button type='submit' id={id} onClick={makeOrder} name='Buy' />
+            <div className={style.container}>
+                <img className={style['watch-image']} src={watch.image} alt='watch' />
+                <div className={style['sub-container']}>
+                    <h1 className={style.header}>{watch.name}</h1>
+                    <p className={style.description}>{watch.description}</p>
+                    <p className={style.price}>
+                        The price is: <NumberFormat value={watch.price} displayType={'text'} thousandSeparator={true} prefix={watch.currency} />
+                    </p>
+                    <Button type='submit' id={id} onClick={makeOrder} name='Buy' />
+                </div>
             </div>
         </PageLayout>
     );
