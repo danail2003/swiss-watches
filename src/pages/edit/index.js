@@ -6,6 +6,7 @@ import styles from './edit.module.css';
 import Config from '../../Config';
 import requester from '../../services/requester';
 import Button from '../../components/button/index';
+import receiveNotification from '../../services/notifications';
 
 const Edit = () => {
     const [name, setName] = useState('');
@@ -55,6 +56,7 @@ const Edit = () => {
             })
             .then(() => {
                 history.push('/account');
+                receiveNotification('Successfully edited.');
             })
             .catch((e) => history.push('/error', e.message));
     };
@@ -69,7 +71,7 @@ const Edit = () => {
                         <label htmlFor='name'>Name</label>
                         <input id='name' type='text' onChange={e => setName(e.target.value)} value={name} />
                         <label htmlFor='descrption'>Description</label>
-                        <input id='description' type='text' onChange={e => setDescription(e.target.value)} value={description} />
+                        <textarea id='description' type='text' onChange={e => setDescription(e.target.value)} value={description} />
                         <label htmlFor='price'>Price</label>
                         <input id='price' type='text' onChange={e => setPrice(e.target.value)} value={price} />
                         <label htmlFor='currency'>Currency</label>
@@ -77,7 +79,7 @@ const Edit = () => {
                             <option value='$'>$</option>
                             <option value='£'>£</option>
                             <option value='€'>€</option>
-                            <option value='лв.'>лв.</option>
+                            <option value='BGN'>BGN</option>
                         </select>
                         <label htmlFor='image'>Image</label>
                         <input id='image' type='url' onChange={e => setImage(e.target.value)} value={image} />

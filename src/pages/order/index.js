@@ -6,6 +6,7 @@ import Config from '../../Config';
 import PageLayout from '../../components/page-layout/index';
 import Title from '../../components/title/index';
 import Button from '../../components/button/index';
+import receiveNotification from '../../services/notifications';
 
 const Order = () => {
     const [firstName, setFirstName] = useState('');
@@ -69,6 +70,8 @@ const Order = () => {
             })
                 .then(() => {
                     history.push('/');
+
+                    receiveNotification('Order is made.');
                 })
                 .catch((e) => {
                     history.push("/error", e.message);

@@ -7,6 +7,7 @@ import PageLayout from '../../components/page-layout/index';
 import Config from '../../Config';
 import requester from '../../services/requester';
 import Button from '../../components/button/index';
+import receiveNotification from '../../services/notifications';
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -26,6 +27,7 @@ const Register = () => {
         await requester(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${Config.apiKey}`, 'POST', { email, password })
             .then(() => {
                 history.push('/login');
+                receiveNotification('Successfully registered.');
             })
             .catch(e => history.push('/error', e.message));
     };

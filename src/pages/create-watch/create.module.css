@@ -26,11 +26,13 @@
 }
 
 .create-form > fieldset > input {
+    width: 70%;
     margin-bottom: 30px;
     padding: 7px;
 }
 
 textarea {
+    width: 70%;
     min-height: 100px;
 }
 
@@ -41,6 +43,7 @@ textarea {
 }
 
 select {
+    width: 70%;
     margin-bottom: 30px;
     padding: 7px;
     outline: none;

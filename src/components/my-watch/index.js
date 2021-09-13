@@ -4,6 +4,7 @@ import styles from './my-watch.module.css';
 import Config from '../../Config';
 import requester from '../../services/requester';
 import Button from '../button/index';
+import receiveNotification from '../../services/notifications';
 
 const MyWatch = (props) => {
     const history = useHistory();
@@ -19,6 +20,8 @@ const MyWatch = (props) => {
             })
             .catch((e) => {
                 history.push('/error', e.message);
+                
+                receiveNotification('Successfully deleted.');
             })
     };
 
