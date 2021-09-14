@@ -6,7 +6,7 @@ import styles from './edit.module.css';
 import Config from '../../Config';
 import requester from '../../services/requester';
 import Button from '../../components/button/index';
-import receiveNotification from '../../services/notifications';
+import notificationsReceiver from '../../services/notificationsReceiver';
 
 const Edit = () => {
     const [name, setName] = useState('');
@@ -56,9 +56,9 @@ const Edit = () => {
             })
             .then(() => {
                 history.push('/account');
-                receiveNotification('Successfully edited.');
+                notificationsReceiver('Successfully edited.');
             })
-            .catch((e) => history.push('/error', e.message));
+            .catch(e => history.push('/error', e.message));
     };
 
     return (

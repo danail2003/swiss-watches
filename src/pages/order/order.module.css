@@ -26,6 +26,7 @@
 }
 
 .order-form > fieldset > input {
+    width: 70%;
     margin-bottom: 30px;
     padding: 7px;
 }

@@ -4,7 +4,7 @@ import styles from './my-watch.module.css';
 import Config from '../../Config';
 import requester from '../../services/requester';
 import Button from '../button/index';
-import receiveNotification from '../../services/notifications';
+import notificationsReceiver from '../../services/notificationsReceiver';
 
 const MyWatch = (props) => {
     const history = useHistory();
@@ -17,12 +17,12 @@ const MyWatch = (props) => {
         await requester(`${Config.dataUrl}/watches/${id}.json`, 'DELETE')
             .then(() => {
                 history.push('/');
+
+                notificationsReceiver('Successfully deleted.');
             })
             .catch((e) => {
                 history.push('/error', e.message);
-                
-                receiveNotification('Successfully deleted.');
-            })
+            });
     };
 
     const navigateToEdit = (e) => {

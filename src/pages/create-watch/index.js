@@ -6,7 +6,7 @@ import styles from './create.module.css';
 import Config from '../../Config';
 import requester from '../../services/requester';
 import Button from '../../components/button/index';
-import receiveNotification from '../../services/notifications';
+import notificationsReceiver from '../../services/notificationsReceiver';
 
 const CreateWatch = () => {
     const [name, setName] = useState('');
@@ -41,7 +41,7 @@ const CreateWatch = () => {
             .then(() => {
                 history.push('/');
 
-                receiveNotification('Successfully added watch!');
+                notificationsReceiver('Successfully added watch!');
             })
             .catch(e => history.push('/error', e.message));
     };

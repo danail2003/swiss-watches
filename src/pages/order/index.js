@@ -6,7 +6,7 @@ import Config from '../../Config';
 import PageLayout from '../../components/page-layout/index';
 import Title from '../../components/title/index';
 import Button from '../../components/button/index';
-import receiveNotification from '../../services/notifications';
+import notificationsReceiver from '../../services/notificationsReceiver';
 
 const Order = () => {
     const [firstName, setFirstName] = useState('');
@@ -36,9 +36,7 @@ const Order = () => {
             .then(() => {
                 reduceQty();
             })
-            .catch((e) => {
-                history.push('/error', e.message);
-            })
+            .catch(e => history.push('/error', e.message));
     };
 
     const reduceQty = async () => {
@@ -50,10 +48,10 @@ const Order = () => {
             await requester(`${Config.dataUrl}/watches/${id}.json`, 'DELETE')
                 .then(() => {
                     history.push('/');
+
+                    notificationsReceiver('Order is made.');
                 })
-                .catch((e) => {
-                    history.push('/error', e.message);
-                });
+                .catch(e => history.push('/error', e.message));
         }
         else {
             watch.qty -= 1;
@@ -71,11 +69,9 @@ const Order = () => {
                 .then(() => {
                     history.push('/');
 
-                    receiveNotification('Order is made.');
+                    notificationsReceiver('Order is made.');
                 })
-                .catch((e) => {
-                    history.push("/error", e.message);
-                });
+                .catch(e => history.push("/error", e.message));
         }
     };
 

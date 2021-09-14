@@ -6,7 +6,7 @@ import Context from '../../Context';
 import RenderMyWatches from '../../components/render-my-watches/RenderMyWatches';
 import styles from './account.module.css';
 import Button from '../../components/button/index';
-import receiveNotification from '../../services/notifications';
+import notificationsReceiver from '../../services/notificationsReceiver';
 
 const Account = () => {
     const context = useContext(Context);
@@ -14,8 +14,10 @@ const Account = () => {
 
     const Submit = () => {
         context.logOut();
+
         history.push('/');
-        receiveNotification('Loged out.');
+        
+        notificationsReceiver('Loged out.');
     };
 
     return (

@@ -1,4 +1,4 @@
-const receiveNotification = (text) => {
+const notificationsReceiver = (text) => {
     const newDiv = document.createElement('div');
     newDiv.setAttribute('class', 'notification');
     const content = document.createTextNode(text);
@@ -11,4 +11,4 @@ const receiveNotification = (text) => {
     }, 3000);
 };
 
-export default receiveNotification;
+export default notificationsReceiver;

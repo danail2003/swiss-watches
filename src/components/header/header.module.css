@@ -32,6 +32,7 @@
 
 .nav > ul > input {
     width: 20%;
+    margin-left: 20px;
     padding: 5px 10px;
     border-end-end-radius: 0;
     border-start-start-radius: 0;

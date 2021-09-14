@@ -8,7 +8,7 @@ import Context from '../../Context';
 import Config from '../../Config';
 import requester from '../../services/requester';
 import Button from '../../components/button/index';
-import receiveNotification from '../../services/notifications';
+import notificationsReceiver from '../../services/notificationsReceiver';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -33,7 +33,8 @@ const Login = () => {
             context.logIn(response);
 
             history.push('/');
-            receiveNotification('Successfully loged in.');
+            
+            notificationsReceiver('Successfully loged in.');
         }
         else {
             history.push('/error', 'Something went wrong!!!');
